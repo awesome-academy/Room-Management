@@ -7,3 +7,13 @@ en:
   design_by: " @2019 design by Phạm Hải Đăng"
   vietnamese: "VietNamese"
   english: "English"
+  email: "Email"
+  password: "Password"
+  contant_erorr: "The form contains" 
+  logout: "Logout"
+  Acount: "acount"
+  user: "Users"
+  error: "error"
+  login_page:
+    login_error: "Invalid email/password combination"
+    login_success: "Wellcome"

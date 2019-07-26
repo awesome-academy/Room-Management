@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_035036) do
+ActiveRecord::Schema.define(version: 2019_07_25_075442) do
 
   create_table "bill_services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "service_id"
@@ -70,13 +70,13 @@ ActiveRecord::Schema.define(version: 2019_07_25_035036) do
     t.string "name"
     t.string "phone"
     t.string "idCart"
-    t.string "username"
-    t.string "password"
+    t.string "email"
     t.integer "role"
     t.integer "count"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "bill_services", "bills"
