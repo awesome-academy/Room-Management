@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= link_to user.name, user %>    
+  </td>
+  <td>
+    <%= link_to user.email, user %>    
+  </td>
+  <td>
+    <%= link_to user.phone, user %>    
+  </td>
+  <td>
+    <%= link_to user.idCart, user %>    
+  </td>
+  <td>        
+  </td>
+  <td>
+    <%= link_to t(".delete"), user, method: :delete,
+  data: { confirm: t(".sure") } %> | 
+  <%= link_to t(".show"), user %> |
+  <%= link_to t(".edit"), edit_user_path(user) %>
+  </td>
+</tr>

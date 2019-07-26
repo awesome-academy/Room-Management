@@ -25,3 +25,25 @@ User.create!(name:  "admin123456",
   count: 2,
   created_at: Time.zone.now)
 end
+
+2.times do |n|
+  name  = "Category#{n+1}"
+  Category.create!(name:  name,
+  price: 1000000,
+  created_at: Time.zone.now)
+end
+
+10.times do |n|
+  name  = "Room#{n+1}"
+  Room.create!(name:  name,
+  category_id: 1,
+  created_at: Time.zone.now)
+end
+
+10.times do |n|
+  name  = "Room#{n+1}"
+  Room.create!(name:  name,
+  category_id: 2,
+  created_at: Time.zone.now)
+end
+

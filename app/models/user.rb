@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+  USER_PARAMS = %i(name phone idCart email role room_id password password_confirmation).freeze
+  enum role: {employee: 0, manager: 1}
   before_save {email.downcase!}
 
   has_many :feed_backs, dependent: :destroy

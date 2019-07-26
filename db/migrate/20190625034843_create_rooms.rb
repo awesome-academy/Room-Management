@@ -3,8 +3,6 @@ class CreateRooms < ActiveRecord::Migration[6.0]
     create_table :rooms do |t|
       t.string :name
       t.references :category, foreign_key: true
-      t.references :user, foreign_key: true
-      t.float :price
       t.integer :status
       
       t.timestamps

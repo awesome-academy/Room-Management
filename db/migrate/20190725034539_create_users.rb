@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email
       t.integer :role
       t.integer :count
+      t.references :room, foreign_key: true
 
       t.timestamps
     end

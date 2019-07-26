@@ -12,6 +12,10 @@
 
 body {
   padding-top: 60px;
+  background: $backgroud_body;
+}
+table.table.user-list {
+  background: $white_medium;
 }
 
 section {
@@ -81,9 +85,9 @@ footer {
   border-top: 1px solid $gray-medium-light;
   background: $back-medium;
   color: $gray-light;
-  bottom: 0px;
-    position: absolute;
-    width: 100%;
+  // position: fixed;
+  // width: 100%;
+  // bottom: 0;
   a {
     color: $gray;
     &:hover {
@@ -129,4 +133,15 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 50px 0;
+  border-radius: 4px;
 }

@@ -4,3 +4,4 @@ validation:
   password_user_min: 6
   password_user_max: 255
   email_user: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+pagetion: 10

@@ -17,3 +17,12 @@ en:
   login_page:
     login_error: "Invalid email/password combination"
     login_success: "Wellcome"
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  password_c: "Password confirmation"
+  phone: "Phone"
+  idCart: "Idcart"
+  idRoom: "Idroom"
+  submit: "Submit"
+  count: "Member number"
