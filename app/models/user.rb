@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   before_save {email.downcase!}
 
   has_many :feed_backs, dependent: :destroy
@@ -13,6 +14,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length:{minimum: Settings.validation.password_user_min}, allow_nil: true
   validates :phone, presence: true
   validates :idCart, presence: true
+
   
   has_secure_password
 
@@ -26,4 +28,5 @@ class User < ApplicationRecord
         BCrypt::Engine.cost
     BCrypt::Password.create string, cost: cost
   end
+
 end
