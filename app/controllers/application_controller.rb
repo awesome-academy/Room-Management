@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_user
-      return if current_user
+      return if current_user.manager?
       flash[:danger] = t "error"
       redirect_to root_url
     end

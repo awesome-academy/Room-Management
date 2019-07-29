@@ -3,8 +3,8 @@
   <td><span><%= category.price %></span></td>
   <td>
     <%= link_to t(".delete"), category, method: :delete,
-  data: { confirm: t("sure") } %> | 
-  <%= link_to t(".show"), category %> |
-  <%= link_to t(".edit"), edit_category_path(category) %>
+      data: { confirm: t("sure") } %> | 
+    <%= link_to t(".show"), category %> |
+    <%= link_to t(".edit"), edit_category_path(category) %>
   </td>
 </tr>

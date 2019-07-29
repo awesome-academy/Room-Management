@@ -71,11 +71,13 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
     t.string "email"
     t.integer "role"
     t.integer "count"
+    t.bigint "room_id"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["room_id"], name: "index_users_on_room_id"
   end
 
   add_foreign_key "bill_services", "bills"
@@ -83,4 +85,5 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
   add_foreign_key "bills", "users"
   add_foreign_key "feed_backs", "users"
   add_foreign_key "rooms", "categories"
+  add_foreign_key "users", "rooms"
 end

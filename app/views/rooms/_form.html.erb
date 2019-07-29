@@ -1,0 +1,15 @@
+<%= form_for @room do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t("name") %>
+  <%= f.text_field :name, class: "form-control mb-1" %>
+
+  <%= f.label t("category") %>
+  <%= f.select :category_id, get_category {|p| [ p.name, p.id ] } , {include_blank: "Category"}, {class: "form-control"} %>
+
+  <%= f.label t("status") %><br/>
+  <%= f.radio_button :status, :active, checked: "checked" %> <%= t("active") %> <br/>
+  <%= f.radio_button :status, :unactive %> <%= t("unactive") %><br/> 
+
+  <%= f.submit t("submit"), class: "btn btn-primary mt-1" %>
+<% end %>
