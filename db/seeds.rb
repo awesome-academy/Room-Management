@@ -1,4 +1,4 @@
-require "ffaker"
+ require "ffaker"
 
 2.times do |n|
   name  = "Category#{n+1}"
@@ -23,7 +23,7 @@ User.create!(name:  "admin123456",
   role: 1,
   count: 3,
   status: 0,
-  # room_id:1,
+   room_id:1,
   created_at: Time.zone.now)
 
  20.times do |n|
@@ -40,6 +40,6 @@ User.create!(name:  "admin123456",
   role: 0,
   count: 2,
   status: 0,
-  # room_id: 1,
+  room_id: 1,
   created_at: Time.zone.now)
 end

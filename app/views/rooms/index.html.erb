@@ -1,0 +1,32 @@
+<% provide :title, t("room") %>
+<div>
+<h1><%= t("room") %></h1>
+<%= link_to t("add_room"), new_room_path %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="main-box no-header clearfix">
+      <div class="main-box-body clearfix">
+        <div class="table-responsive">
+          <table class="table user-list">
+            <thead>
+              <tr>
+                <th><span><%= t("name") %></span></th>
+                <th><span><%= t("category") %></span></span></th>
+                <th><span><%= t("status") %></span></span></th>
+                <th><span><%= t("action") %></span></span></th>
+              </tr>
+            </thead>
+              <tbody>
+                <% @rooms.each do |room| %>
+                  <%= render room %>
+                <% end %>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= paginate @rooms %>
