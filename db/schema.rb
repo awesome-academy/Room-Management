@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_075442) do
+ActiveRecord::Schema.define(version: 2019_07_29_013251) do
 
   create_table "bill_services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "service_id"
@@ -50,13 +50,11 @@ ActiveRecord::Schema.define(version: 2019_07_25_075442) do
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id"
-    t.bigint "user_id"
     t.float "price"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_rooms_on_category_id"
-    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_075442) do
     t.string "email"
     t.integer "role"
     t.integer "count"
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
@@ -84,5 +83,4 @@ ActiveRecord::Schema.define(version: 2019_07_25_075442) do
   add_foreign_key "bills", "users"
   add_foreign_key "feed_backs", "users"
   add_foreign_key "rooms", "categories"
-  add_foreign_key "rooms", "users"
 end
