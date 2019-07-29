@@ -5,7 +5,7 @@
   <%= f.text_field :name, class: "form-control mb-1" %>
 
   <%= f.label t("category") %>
-  <%= f.select :category_id, get_category {|p| [ p.name, p.id ] } , {include_blank: "Category"}, {class: "form-control"} %>
+  <%= f.select :category_id, get_category, {include_blank: t("category")}, {class: "form-control"} %>
 
   <%= f.label t("status") %><br/>
   <%= f.radio_button :status, :active, checked: "checked" %> <%= t("active") %> <br/>

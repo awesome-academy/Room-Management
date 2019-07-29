@@ -9,6 +9,7 @@ en:
   english: "English"
   email: "Email"
   password: "Password"
+  password_cf: "Password Confirm"
   contant_erorr: "The form contains" 
   logout: "Logout"
   Acount: "acount"
@@ -47,4 +48,3 @@ en:
   count: "Number Member"
   room_id: "Room"
   edit_user: "Edit User"
-  
