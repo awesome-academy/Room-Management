@@ -16,6 +16,9 @@ gem "jquery"
 gem "ffaker"
 gem "config"
 gem "bcrypt",         "3.1.12"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+gem "font-awesome-sass", "~> 4.7.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
