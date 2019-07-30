@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password]) 
       log_in user
       flash[:success] = t("login_page.login_success")
-      redirect_back_or user
+      if current_user.manager?
+        redirect_to rooms_path
+      else
+        redirect_back_or user
+      end
     else
       flash.now[:danger] = t "login_page.login_error"
       render :new

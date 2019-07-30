@@ -299,6 +299,7 @@ a.article:hover {
 #side-bar{
   position: absolute;
   top: 50px;
+  min-height: 600px
 }
 button#sidebarCollapse {
   float: right;
