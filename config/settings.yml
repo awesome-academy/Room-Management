@@ -1,5 +1,8 @@
 enabled_locales: ["en"]
 paging_table: 10
+start_stt: 1
+end_stt: 10
+number_zero: 0
 validation:
   name_user_max: 50
   password_user_min: 6

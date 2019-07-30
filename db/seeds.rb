@@ -43,3 +43,10 @@ User.create!(name:  "admin123456",
   room_id: 1,
   created_at: Time.zone.now)
 end
+
+4.times do |n|
+  name  = "Service#{n+1}"
+  Service.create!(name:  name,
+  price: 100000,
+  created_at: Time.zone.now)
+end

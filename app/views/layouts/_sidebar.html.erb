@@ -3,7 +3,7 @@
       <i class="fa fa-bars"></i>      
   </button>
   <div class="sidebar-header text-center">
-    <h3><%= t "tittle_website" %></h3>
+    <h3><%= t "dashboard" %></h3>
   </div>
 
   <ul class="list-unstyled components">
@@ -15,6 +15,9 @@
     </li>
     <li>
       <%= link_to t("users"), users_path %>
+    </li>
+    <li>
+      <%= link_to t("service"), services_path %>
     </li>
   </ul>
 </nav>
