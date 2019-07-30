@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :admin_user, except: %i(show)
   
   def index
-    @rooms = Room.page(params[:page]).per(Settings.paging_table).ordered_by_name
+    @rooms = Room.page(params[:page]).per(Settings.paging_table).ordered_by_id
   end
 
   def new
@@ -44,14 +44,14 @@ class RoomsController < ApplicationController
   end
 
   private
-    def room_params
-      params.require(:room).permit Room::ROOM_PARAMS
-    end
+  def room_params
+    params.require(:room).permit Room::ROOM_PARAMS
+  end
 
-    def load_room
-      @room = Room.find_by id: params[:id]
-      return if @room
-      flash[:danger] = t "fail"
-      redirect_to root_path
-    end
+  def load_room
+    @room = Room.find_by id: params[:id]
+    return if @room
+    flash[:danger] = t "fail"
+    redirect_to root_path
+  end
 end

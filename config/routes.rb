@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   
   resources :users 
   resources :categories
-  resources :rooms
+  
   resources :services
+  resources :rooms do
+    resources :bills do
+      resources :bill_services
+    end
+  end
 end

@@ -1,12 +1,27 @@
 <% provide :title, @room.name %>
 <div class="row">
+<% if @room.active? %> 
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= @room.name %>
       </h1>
-      <p>Category: <%= @room.category_name %></p>
-      <p>Price: <%= @room.category_price %></p>
+      <p><%= t("category") %>: <%= @room.category_name %></p>
+      <p><%= t("price") %>: <%= @room.category_price %></p>
+
+      <p><%= t("name_room") %>: <%= @room.name %></p>
+    </section>
+    <%= link_to t("create_bill"), new_room_bill_path(@room.id), class: "btn btn-primary" %>
+  </aside>
+  <% else %>
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @room.name %>
+      </h1>
+      <p><%= t("category") %>: <%= @room.category_name %></p>
+      <p><%= t("price") %>: <%= @room.category_price %></p>
     </section>
   </aside>
+  <% end %>
 </div>

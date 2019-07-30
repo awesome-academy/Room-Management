@@ -12,6 +12,7 @@
           <table class="table user-list">
             <thead>
               <tr>
+                <th><span><%= t "stt" %></span></th>
                 <th><span><%= t "name" %></span></th>
                 <th><span><%= t "phone" %></span></th>
                 <th><span><%= t "idCart" %></span></th>
@@ -23,9 +24,7 @@
               </tr>
             </thead>
               <tbody>
-                <% @users.each do |user| %>
-                  <%= render user %>
-                <% end %>
+                <%= render partial: "user", collection: @users %>
               </tbody>
           </table>
         </div>
