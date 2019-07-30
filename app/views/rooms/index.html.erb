@@ -17,9 +17,9 @@
             <i class="fa fa-home"></i>         
           <p><%= t("status") %>: <%= room.status %> </p> 
           <% if room.paymented? %>
-            <p><%= t("paymented") %></p>
+            <p class="paymented"><%= t("paymented") %></p>
           <% else  %>
-          <span><%= t("unpayment") %></span>
+          <span class="unpayment"><%= t("unpayment") %></span>
           <% end %>   
           </div>
         <% else %>

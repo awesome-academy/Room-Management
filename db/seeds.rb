@@ -15,6 +15,14 @@ end
   created_at: Time.zone.now)
 end
 
+10.times do |n|
+  name  = "Room#{n}"
+  Room.create!(name:  name,
+  category_id: 1,
+  status: 0,
+  created_at: Time.zone.now)
+end
+
 User.create!(name:  "admin123456",
   phone: "0964713865",
   password: "123456",
@@ -49,6 +57,21 @@ end
   name  = "Service#{n+1}"
   Service.create!(name:  name,
   price: 100000,
+  created_at: Time.zone.now)
+end
+
+1.times do |n|
+  Bill.create!(user_id:  2,
+  room_id: 1,
+  electrical_number: 100,
+  status: 0,
+  created_at: Time.zone.now)
+end
+
+1.times do |n|
+  BillService.create!(service_id:  1,
+  bill_id: 1, 
+  price: 20000,
   created_at: Time.zone.now)
 end
 
