@@ -25,8 +25,11 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "electrical_number"
+    t.bigint "room_id"
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_bills_on_room_id"
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
     t.bigint "category_id"
     t.float "price"
     t.integer "status"
+    t.integer "payment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_rooms_on_category_id"
@@ -82,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
 
   add_foreign_key "bill_services", "bills"
   add_foreign_key "bill_services", "services"
+  add_foreign_key "bills", "rooms"
   add_foreign_key "bills", "users"
   add_foreign_key "feed_backs", "users"
   add_foreign_key "rooms", "categories"

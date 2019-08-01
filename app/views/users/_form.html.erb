@@ -16,7 +16,7 @@
   <%= f.text_field :count, class: "form-control mb-1" %>
 
   <%= f.label t "room" %>
-  <%= f.select :room_id, get_room, {include_blank: t("room")}, {class: "form-control"} %>
+  <%= f.select :room_id, get_room, {include_blank: t("room"), selected: @user.room ? @user.room.id : ""}, {class: "form-control"} %>
 
   <%= f.label t "password" %>
   <%= f.password_field :password, class: "form-control mb-1" %>

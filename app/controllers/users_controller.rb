@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(new create)
   before_action :load_user, except: %i(new create index)
+  before_action :load_room_user, except: %i(index)
   before_action :admin_user, except: %i(show)
 
   def index
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      @room.update status: @user.status
       flash[:success] = t "success"
       redirect_to @user
     else
@@ -25,7 +27,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      flash[:success] = t ".success"
+      @room.update status: @user.status
+      flash[:success] = t "success"
       redirect_to @user
     else
       render :edit
@@ -36,6 +39,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
+      @room.update status: Settings.status_active
       flash[:success] = t "success"
     else
       flash[:danger] = t "fail"
@@ -52,6 +56,13 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by_id params[:id]
     return if @user
+    flash[:danger] = t "fail"
+    redirect_to root_path
+  end
+
+  def load_room_user
+    @room = Room.find_by(id: @user.room_id)
+    return if @room
     flash[:danger] = t "fail"
     redirect_to root_path
   end

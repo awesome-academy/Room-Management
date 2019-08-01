@@ -1,0 +1,16 @@
+<%= form_for [@room, @bill] do |f| %>
+
+  <%= f.label t("room") %>: 
+  <%= f.label @room.name %> <br>
+
+  <%= f.label t("user") %>: 
+  <%= f.label @room.user.take.name %> <br>
+
+  <%= f.label t("electrical_number") %>
+  <%= f.text_field :electrical_number, class: "form-control mb-1" %>  
+
+  <%= f.hidden_field :user_id, value: @room.user.take.id, class: "form-control mb-1" %>
+  <%= f.hidden_field :room_id, value: @room.id, class: "form-control mb-1" %> 
+
+  <%= f.submit t("submit"), class: "btn btn-primary mt-1" %>
+<% end %>
