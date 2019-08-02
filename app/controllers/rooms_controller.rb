@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :admin_user, except: %i(show)
   
   def index
-    @rooms = Room.page(params[:page]).per(Settings.paging_table).ordered_by_id
+    @rooms = Room.page(params[:page]).per(Settings.paging_table_room).ordered_by_id
   end
 
   def new

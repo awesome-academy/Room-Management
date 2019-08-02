@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   
   resources :users 
   resources :categories
-  
   resources :services
+  resources :bills
   resources :rooms do
-    resources :bills do
-      resources :bill_services
-    end
+    resources :bills
   end
+  post "/search", to: "users#index"
 end

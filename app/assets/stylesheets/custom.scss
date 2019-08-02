@@ -328,3 +328,22 @@ a.btn.btn-primary {
 #room-active{
   border: 4px solid $green_color;
 }
+.border-custom {
+  border: 1px solid $gray_color_2;
+  padding: 20px 10px;
+  border-radius: 3px;
+}
+.nav.nav-tabs > li  {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.paymented{
+ color: $green_color
+}
+.unpayment{
+ color: $red_color
+}
+#search_ip{
+  float: right;
+}

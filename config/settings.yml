@@ -1,6 +1,6 @@
 enabled_locales: ["en"]
 paging_table: 10
-paging_table: 18
+paging_table_room: 18
 start_stt: 1
 end_stt: 10
 number_zero: 0
@@ -10,6 +10,8 @@ validation:
   password_user_max: 255
   email_user: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
 status_active: 1
-status_active: 0
+status_unactive: 0
+status_payment: 1
+status_unpayment: 0
 electric_money: 4000
 edit_action: "edit"

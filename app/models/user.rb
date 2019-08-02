@@ -23,6 +23,7 @@ class User < ApplicationRecord
   validates :room_id, presence: true
 
   scope :ordered_by_name, -> {order(name: :asc)}
+  scope :find_by_name, -> name{where(" name like ?", "%#{name}%" )}
   
   has_secure_password
 
