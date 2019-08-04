@@ -1,7 +1,7 @@
 <tr>
   <td><span><%= get_index_page bill_counter %> </span></td>
   <td><span><%= bill.user_name %></span></td>
-  <td><span><%= bill.room_price %></span></td>
+  <td><span><%= number_to_vnd bill.room_price %></span></td>
   <td><span><%= bill.electrical_number %></span></td>
   <td><span><%= bill.created_at.strftime(t("format_time"))%></span></td>
   <td><span><%= bill.updated_at.strftime(t("format_time"))%></span></td>
@@ -17,4 +17,3 @@
     <% end %>
   </td>
 </tr>
-

@@ -1,0 +1,35 @@
+<div class="row order">
+  <% @rooms.each do |room| %>
+    <div id="table-a" class="col-xs-4 col-sm-3 col-md-2">
+      <%= link_to room_path room.id do %>
+        <% if room.active? %>
+          <div class="tables text-center" id="room-active">
+            <div class="status">
+              <div class="status-table">
+                <p class="text-center"><%= room.name %></p>
+              </div>
+            </div>       
+            <i class="fa fa-home"></i>         
+          <p><%= t("status") %>: <%= room.status %> </p> 
+          <% if room.paymented? %>
+            <p class="paymented"><%= t("paymented") %></p>
+          <% else  %>
+          <span class="unpayment"><%= t("unpayment") %></span>
+          <% end %>   
+          </div>
+        <% else %>
+          <div class="tables text-center">
+            <div class="status">
+              <div class="status-table">
+                <p class="text-center"><%= room.name %></p>
+              </div>
+            </div>       
+            <i class="fa fa-home"></i>         
+          <p> status: <%= room.status %> </p>          
+          </div>
+        <% end %> 
+      <% end %>  
+    </div>
+  <% end %>
+</div>
+<%= paginate @rooms, theme: t("theme_paging") %>

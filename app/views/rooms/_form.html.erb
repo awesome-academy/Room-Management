@@ -11,5 +11,7 @@
   <%= f.radio_button :status, :active, checked: "checked" %> <%= t("active") %> <br/>
   <%= f.radio_button :status, :unactive %> <%= t("unactive") %><br/> 
 
+  <%= f.hidden_field :payment, value: "unpayment", class: "form-control mb-1" %>  
+
   <%= f.submit t("submit"), class: "btn btn-primary mt-1" %>
 <% end %>

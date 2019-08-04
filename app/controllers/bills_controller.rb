@@ -19,8 +19,7 @@ class BillsController < ApplicationController
       flash[:success] = t "success"
       redirect_to room_bill_path(@room.id, @bill)
     else
-      flash[:danger] = t "error"
-      redirect_to bill_path(@bill.room_id)
+      render :new
     end
   end
 

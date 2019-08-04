@@ -5,7 +5,7 @@
       <h1>
         <%= @category.name%>
       </h1>
-      <p>Price: <%= @category.price%></p>
+      <p><%= t("price") %>: <%= number_to_vnd @category.price%></p>
     </section>
   </aside>
 </div>

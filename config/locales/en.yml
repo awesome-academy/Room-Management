@@ -1,4 +1,18 @@
 en:
+  activerecord:
+    enums:
+      feed_back: 
+        statuses:
+          active: "Active"
+          unactive: "Unactive"
+      room: 
+        statuses:
+          active: "Active"
+          unactive: "Unactive"
+      user: 
+        statuses:
+          active: "Active"
+          unactive: "Unactive"
   tittle_website: "Room Management"
   home: "Home"
   login: "Log in"
@@ -45,7 +59,7 @@ en:
   add_user: "Add User"
   phone: "Phone"
   idCart: "Number IDC"
-  count: "Number Member"
+  count: "Member"
   room_id: "Room"
   edit_user: "Edit User"
   service: "Service"
@@ -72,3 +86,13 @@ en:
   format_time: "%d-%m-%Y"
   search: "Search"
   time: "Time"
+  feed_back: "Feed back"
+  title: "Title"
+  content: "Content"
+  created_at: "Created at"
+  create_feedback: "Create Feedback"
+  add_feed_back: "Add FeedBack"
+  edit_feed_back: "Edit FeedBack"
+  paymented: "Paymented"
+  unpayment: "Unpayment"
+  profile: "Profile"

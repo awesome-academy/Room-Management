@@ -13,4 +13,6 @@ class Bill < ApplicationRecord
   delegate :price, to: :room, prefix: true
 
   scope :ordered_by_created, -> {order created_at: :desc}
+  
+  validates :electrical_number, presence: true
 end
