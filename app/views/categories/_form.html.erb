@@ -4,7 +4,7 @@
   <%= f.text_field :name, class: "form-control mb-1" %>
   
   <%= f.label t("price") %>
-  <%= f.text_field :price, class: "form-control mb-1" %>
+  <%= f.text_field :price, class: "form-control mb-1", data: {autonumeric: {mDec: Settings.number_zero}} %>
 
   <%= f.submit t("submit"), class: "btn btn-primary" %>
 <% end %>

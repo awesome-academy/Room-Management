@@ -3,7 +3,7 @@ class CreateFeedBacks < ActiveRecord::Migration[6.0]
     create_table :feed_backs do |t|
       t.references :user, foreign_key: true
       t.string :title
-      t.string :detail
+      t.text :detail
       t.integer :status
       
       t.timestamps

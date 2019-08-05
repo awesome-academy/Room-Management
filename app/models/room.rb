@@ -9,6 +9,7 @@ class Room < ApplicationRecord
   has_many :bill
 
   scope :ordered_by_id, -> {order(id: :asc)}
+  scope :find_by_status_room, -> status {where(status: status)}
 
   delegate :name, to: :category, prefix: true
   delegate :price, to: :category, prefix: true

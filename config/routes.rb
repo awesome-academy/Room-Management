@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   resources :categories
   resources :services
   resources :bills
+  resources :feed_backs
   resources :rooms do
     resources :bills
   end
-  post "/search", to: "users#index"
+  get "/search_user", to: "users#index"
+  post "/search_user", to: "users#search"
+  get "/search_room", to: "rooms#index"
+  post "/search_room", to: "rooms#search_room"
+  get "/search_feed_back", to: "feed_backs#index"
+  post "/search_feed_back", to: "feed_backs#search_feed_back"
 end

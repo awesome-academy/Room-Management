@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
   def update
     if @category.update category_params
       flash[:success] =  t "success"
-      redirect_to @category
+      redirect_to categories_path
     else
       render :edit
     end

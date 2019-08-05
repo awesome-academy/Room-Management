@@ -26,7 +26,7 @@ class ServicesController < ApplicationController
   def update
     if @service.update services_params
       flash[:success] = t "success"
-      redirect_to @service
+      redirect_to services_path
     else
       render :edit
     end

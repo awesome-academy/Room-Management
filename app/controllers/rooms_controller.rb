@@ -1,11 +1,10 @@
 class RoomsController < ApplicationController
   before_action :logged_in_user, except: %i(new create)
-  before_action :load_room, except: %i(new create index)
-  before_action :admin_user, except: %i(show)
+  before_action :load_room, except: %i(new create index search_room)
+  before_action :admin_user, except: %i(show index search_room)
+  before_action :load_rooms, only: %i(index search_room)
   
-  def index
-    @rooms = Room.page(params[:page]).per(Settings.paging_table_room).ordered_by_id
-  end
+  def index; end
 
   def new
     @room = Room.new
@@ -43,6 +42,13 @@ class RoomsController < ApplicationController
     redirect_to rooms_url
   end
 
+  def search_room
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
   def room_params
     params.require(:room).permit Room::ROOM_PARAMS
@@ -53,5 +59,11 @@ class RoomsController < ApplicationController
     return if @room
     flash[:danger] = t "fail"
     redirect_to root_path
+  end
+
+  def load_rooms
+    @rooms = Room.where nil
+    @rooms = @rooms.find_by_status_room(params[:status]) if params[:status].present?
+    @rooms = @rooms.page(params[:page]).per(Settings.paging_table_room).ordered_by_id
   end
 end

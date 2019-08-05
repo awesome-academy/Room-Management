@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_013251) do
   create_table "feed_backs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
-    t.string "detail"
+    t.text "detail"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

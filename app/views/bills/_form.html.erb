@@ -1,4 +1,5 @@
 <%= form_for [@room, @bill] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="col-xs-12 col-md-12">
     <ul class="nav nav-tabs">
       <li class="active">
@@ -19,7 +20,7 @@
             <% @services.each do |service| %>
               <tr>
                 <td><span><%= service.name %></span></td>
-                <td><span><%= service.price %></span></td>
+                <td><span><%= number_to_vnd service.price %></span></td>
                 <td><%= f.check_box :bill_services, {multiple: true},service.id, nil %></td>                        
               </tr>
             <% end %>

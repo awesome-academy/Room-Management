@@ -1,4 +1,4 @@
- require "ffaker"
+require "ffaker"
 
 2.times do |n|
   name  = "Category#{n+1}"
@@ -8,18 +8,20 @@
 end
 
 10.times do |n|
-  name  = "Room#{n}"
+  name  = "Room#{n+1}"
   Room.create!(name:  name,
   category_id: 1,
   status: 0,
+  payment: 0,
   created_at: Time.zone.now)
 end
 
 10.times do |n|
-  name  = "Room#{n}"
+  name  = "Room#{n+10}"
   Room.create!(name:  name,
   category_id: 1,
   status: 0,
+  payment: 0,
   created_at: Time.zone.now)
 end
 
@@ -81,4 +83,14 @@ end
   electrical_number: 100,
   status: 0,
   created_at: Time.zone.now)
+end
+
+users = User.order(:created_at).take(6)
+50.times do |n|
+  title = "title#{n+1}"
+  detail = "detail#{n+1}"
+  users.each { |user| user.feed_backs.create!(
+    title: title,
+    detail: detail)
+   }
 end

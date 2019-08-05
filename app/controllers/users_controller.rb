@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: %i(new create search)
+  before_action :logged_in_user, except: %i(new create)
   before_action :load_user, except: %i(new create index search)
-  before_action :admin_user, except: %i(show search)
+  before_action :admin_user, except: %i(show)
   before_action :load_users, only: %i(index search)
 
   def index; end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       load_room_user @user
       @room.update status: @user.status
       flash[:success] = t "success"
-      redirect_to @user
+      redirect_to users_path
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def search
+  def search_user
     respond_to do |format|
       format.html
       format.js
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
 
   def load_users
     @users = User.where nil
-    @users = @users.find_by_name(params[:name]) if params[:name].present?
+    @users = @users.find_by_name_user(params[:name]) if params[:name].present?
     @users = @users.page(params[:page]).per Settings.paging_table
   end
 end
