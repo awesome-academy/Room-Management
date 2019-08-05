@@ -364,3 +364,18 @@ a.btn.btn-primary {
 ul.components li a:hover{
   color: #000 !important;
 }
+.action_room{
+  display: none
+}
+.action_room.active {
+  display: block;
+}
+
+#table-a .fa.fa-home {
+  position: absolute;
+  top: 20%;
+  left: 20%
+}
+.status_1{
+  padding-top:20px 
+}

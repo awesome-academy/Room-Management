@@ -63,3 +63,10 @@ $(document).on ('keyup', '#find_by_title_fb', function(){
     call_ajax('/search_feed_back', 'POST', data);
   });
 });
+
+$(document).on("turbolinks:load",function(){
+  $('.fa.fa-home').on( "click", function() {
+    $('.action_room').removeClass('active')
+    $(this).parent().find('.action_room ').addClass('active')
+  });
+})
