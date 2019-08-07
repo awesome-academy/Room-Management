@@ -17,7 +17,7 @@ RSpec.describe Category, type: :model do
     it {is_expected.to validate_presence_of :name}
     describe "#price" do
       it {is_expected.to validate_presence_of :price}
-      it {is_expected.to allow_value("123000").for :price}
+      it {is_expected.to allow_value("12300").for :price}
     end
   end
 

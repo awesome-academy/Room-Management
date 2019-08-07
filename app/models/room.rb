@@ -5,7 +5,7 @@ class Room < ApplicationRecord
   after_create :update_price
 
   belongs_to :category
-  has_many :user
+  has_many :user, dependent: :nullify
   has_many :bill
 
   scope :ordered_by_id, -> {order(id: :asc)}

@@ -9,4 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: room_management
+  database: room_management_development
+test:
+  <<: *default
+  database: room_management_test

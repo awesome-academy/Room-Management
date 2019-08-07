@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :feed_backs, dependent: :destroy
   has_many :bills, dependent: :destroy
-  belongs_to :room
+  belongs_to :room, optional: true
 
   delegate :name, to: :room, prefix: true
 
@@ -20,8 +20,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length:{minimum: Settings.validation.password_user_min}, allow_nil: true
   validates :phone, presence: true
   validates :idCart, presence: true
-  validates :room_id, presence: true
-
+  validates :room_id, presence: true, allow_nil: true
   scope :ordered_by_name, -> {order(name: :asc)}
   scope :find_by_name_user, -> name{where(" name like ?", "%#{name}%" )}
   

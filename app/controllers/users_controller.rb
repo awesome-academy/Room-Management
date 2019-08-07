@@ -12,9 +12,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    load_room_user @user
+    load_room_user @user if @user.room_id?
     if @user.save
-      @room.update status: @user.status
+      @room.update status: @user.status if @user.room_id?
       flash[:success] = t "success"
       redirect_to @user
     else
@@ -71,7 +71,6 @@ class UsersController < ApplicationController
     @room = Room.find_by id: user.room_id
     return if @room
     flash[:danger] = t "fail"
-    redirect_to root_path
   end
 
   def load_users
