@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in_user, except: %i(new create)
+  before_action :logged_in_user
   before_action :load_category, except: %i(new create index)
   before_action :admin_user, except: %i(show)
 
